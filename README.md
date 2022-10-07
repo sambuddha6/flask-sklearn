@@ -240,10 +240,10 @@ Port: 443
   ![log tail](./docs/source/_static/img/log_tail.JPG)
 
 * Gihub actions success
-  ![Locust](./docs/source/_static/img/Locust.JPG)
+  ![Github_Actions](./docs/source/_static/img/Github_Actions_success.JPG)
 	
 * Locust run
-  ![Github_Actions](./docs/source/_static/img/Github_Actions_success.JPG)
+  ![Locust](./docs/source/_static/img/Locust.JPG)
 
 ## Enhancements
 
