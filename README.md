@@ -48,5 +48,5 @@ Port: 443
 
 <TODO: Add link Screencast on YouTube>
 
-![Python application test with Github Actions](https://github.com/sambuddha6/flask-sklearn/.github/workflows/pythonapp.yml/badge.svg)
+![Python application test with Github Actions](https://github.com/sambuddha6/flask-sklearn/tree/main/.github/workflows/pythonapp.yml/badge.svg)
 
