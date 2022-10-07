@@ -14,7 +14,7 @@ The CI/CD Pipeline project is to demonstrate setting up Azure Pipelines to deplo
 * Architectural Diagram (Shows how key parts of the system work)
 ![Architecture Digram](./docs/source/_static/img/Architecture.JPG)
 
-Instructions for running the Python project - 
+##Instructions for running the Python project - 
 
 1. Create a new GitHub Repo without the README.md file
 
@@ -35,8 +35,7 @@ Instructions for running the Python project -
 3. Create ssh keys and add it to the GitHub repo:
    - ssh-keygen -t rsa
    - cat /home/sambuddha/.ssh/id_rsa.pub
-   - <copy Key>
-   
+   - (copy Key)
    - Goto Github->Settings->SSH and GPG Keys->New SSH Key-><Title> and <Key>-> Add SSH Key
  
 4. Clone the Github repo in Cloud Shell:
@@ -63,84 +62,25 @@ Instructions for running the Python project -
    - pytest
    - jsonschema
   
-8. Make the following changes in Makefile
+8. Make the following changes in Makefile:
     a) add under test:
-	test:
+	- test:
 	- python -m pytest -vv test_app.py
     b) update under lint:
-	lint:
+	- lint:
 	- pylint --disable=R,C,W1203,W0702 app.py
   
-9. Add the following changes in app.py
-	a) update line #17
-	   from
-	   - scaler = StandardScaler().fit(payload) 
-	   to 
+9. Add the following changes in app.py:
+	a) update line #17:
 	   - scaler = StandardScaler(with_mean=False).fit(payload)
-	b) add after line #58
+	b) add after line #58:
 	   - clf = clf[0][0]
   
 10. Add the following changes in make_predict_azure_app.sh
    update line #28
-   -X POST https://<yourappname>.azurewebsites.net:$PORT/predict
-   to
    -X POST https://flask-ml-service01.azurewebsites.net:$PORT/predict
   
-11. Add a new test_app.py and add the following
-	
-from app import app
-import json
-import jsonschema
-from jsonschema import validate
-
-predictSchema = {
-    "type": "object",
-    "properties": {
-        "prediction": {"type": "number"}
-    },
-}
-
-def test_validateJson():
-    with app.test_client() as client:
-        data = {"CHAS":{"0":0},
-                "RM":{"0":6.575},
-                "TAX":{"0":296.0},
-                "PTRATIO":{"0":15.3},
-                "B":{"0":396.9},
-                "LSTAT":{"0":4.98}
-                }
-
-        response = client.post(
-            "/predict",
-            data=json.dumps(data),
-            headers={"Content-Type": "application/json"},
-        )
-
-        try:
-            validate(instance=data, schema=predictSchema)
-        except jsonschema.exceptions.ValidationError as err:
-            return False
-        return True
-
-def test_predict():
-    with app.test_client() as client:
-        inputdata = {"CHAS":{"0":0},
-                "RM":{"0":6.575},
-                "TAX":{"0":296.0},
-                "PTRATIO":{"0":15.3},
-                "B":{"0":396.9},
-                "LSTAT":{"0":4.98}
-                }
-
-        response = client.post(
-            "/predict",
-            data=json.dumps(inputdata),
-            headers={"Content-Type": "application/json"},
-        )
-
-        if response.data == { "prediction": [ 20.869782939832444 ] }:
-            return True
-        return False   
+11. Add a new test_app.py (refer to the Github repo)
   
 12. Run the Makefile:
 	- make all
@@ -166,11 +106,10 @@ def test_predict():
 
 	- git commit -m "Changes made for successful run"
   
-  Execute next 3 lines if Github throws error for email id and name
+  Execute next 3 lines if Github throws error for email id and name:
 	 - git config --global user.email "sambuddha6@gmail.com"
 	 - git config --global user.name "Sambuddha"
          - git commit -m "Changes made for successful run"
-	
          - git push
   
 17. - Goto dev.azure.com 
@@ -193,17 +132,13 @@ def test_predict():
   
 18. Check azure-pipelines.yml in GitHub repo
   
-19. Edit app.py 
-    a) update line #23
-	     from 
-		   - html = "<h3>Sklearn Prediction Home</h3>"
-	     to
-		   - html = "<h3>Sklearn Prediction Home - Machine Learning</h3>"
-	     and monitor the trigger in deployment
-	
-	   Post-Deployment check https://flask-ml-service01.azurewebsites.net/
+19. Edit app.py:
+    a) update line #23:
+       - html = "<h3>Sklearn Prediction Home - Machine Learning</h3>"
+    b) monitor the trigger in deployment:
+       - Post-Deployment check https://flask-ml-service01.azurewebsites.net/
 
-  Screenshots
+  ## Screenshots
 * Project running on Azure App Service
   ![Web service is running](./docs/source/_static/img/Web_service_is_running.JPG)
   
