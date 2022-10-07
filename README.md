@@ -169,43 +169,36 @@ The CI/CD Pipeline project is to demonstrate setting up Azure Pipelines to deplo
        - Post-Deployment check https://flask-ml-service01.azurewebsites.net/
 
   ## Screenshots
-* Project running on Azure App Service
+* Project running on Azure App Service:
   ![Web service is running](./docs/source/_static/img/Web_service_is_running.JPG)
   
-* Project cloned into Azure Cloud Shell
+* Project cloned into Azure Cloud Shell:
   ![git clone](./docs/source/_static/img/git_clone.JPG)
 
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
+* Passing tests that are displayed after running the `make all` command from the `Makefile`:
   ![Test run](./docs/source/_static/img/Test_run.JPG)
   ![make test fail](./docs/source/_static/img/make_test_fail.JPG)
   ![make test success](./docs/source/_static/img/make_test_success.JPG)
 
-* Output of a test run
+* Output of a test run:
   ![Test run](./docs/source/_static/img/Test_run.JPG)
 
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+* Successful deploy of the project in Azure Pipelines: 
   ![Azure Pipeline success](./docs/source/_static/img/Azure_Pipeline_success.JPG)
 
-* Running Azure App Service from Azure Pipelines automatic deployment
+* Running Azure App Service from Azure Pipelines automatic deployment:
   ![Web service is running](./docs/source/_static/img/Web_service_is_running_2.JPG)
 
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
+* Successful prediction from deployed flask app in Azure Cloud Shell:
   ![prediction](./docs/source/_static/img/prediction.JPG)
 
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
-
-* Output of streamed log files from deployed application
+* Output of streamed log files from deployed application:
   ![log tail](./docs/source/_static/img/log_tail.JPG)
 
-* Gihub actions success
+* Gihub actions success:
   ![Github_Actions](./docs/source/_static/img/Github_Actions_success.JPG)
 	
-* Locust run
+* Locust run:
   ![Locust](./docs/source/_static/img/Locust.JPG)
 
 ## Enhancements
