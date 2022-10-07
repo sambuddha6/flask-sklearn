@@ -1,3 +1,5 @@
+![Python application test with Github Actions](https://img.shields.io/github/workflow/status/actions/toolkit/toolkit-unit-tests?label=Python%20application%20test%20with%20Github%20Actions)
+
 # Overview
 
 The CI/CD Pipeline project is to demonstrate setting up Azure Pipelines to deploy the Flask starter code to Azure App Services  
@@ -213,6 +215,4 @@ The project can be improved in the future by making it up-to-date with the lates
 ## Demo 
 
 <TODO: Add link Screencast on YouTube>
-
-![Python application test with Github Actions](./workflows/pythonapp.yml/badge.svg)
 
