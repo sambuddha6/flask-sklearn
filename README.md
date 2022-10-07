@@ -4,10 +4,10 @@ The CI/CD Pipeline project is to demonstrate setting up Azure Pipelines to deplo
 
 ## Project Plan
 
-* A link to a Trello board for the project
-  https://trello.com/b/1Z98Wkne/building-a-ci-cd-pipeline
-* A link to a spreadsheet that includes the original and final project plan
-  https://docs.google.com/spreadsheets/d/1nhY7yxAXK9w2wiocfXecUQAX61Cs7iz6yhkYX0LK82M/edit#gid=1348135932
+* A link to a Trello board for the project:
+  - https://trello.com/b/1Z98Wkne/building-a-ci-cd-pipeline
+* A link to a spreadsheet that includes the original and final project plan:
+  - https://docs.google.com/spreadsheets/d/1nhY7yxAXK9w2wiocfXecUQAX61Cs7iz6yhkYX0LK82M/edit#gid=1348135932
 
 ## Instructions
  
