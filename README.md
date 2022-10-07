@@ -18,67 +18,67 @@ Instructions for running the Python project -
 
 1. Create a new GitHub Repo without the README.md file
 
-2. Download the Flask starter code from Azure-Cloud-DevOps-Starter-Code/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/ and add the following files in the new repo
-   a) Dockerfile
-   b) Makefile
-   c) README.md
-   d) app.py
-   e) boston_housing_prediction.joblib
-   f) housing.csv
-   g) make_predict_azure_app.sh
-   h) make_prediction.sh
-   i) requirements.txt
-   j) run_docker.sh
-   k) run_kubernetes.sh
-   l) upload_docker.sh
+2. Download the Flask starter code from Azure-Cloud-DevOps-Starter-Code/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/ and add the following files in the new repo: 
+   - Dockerfile
+   - Makefile
+   - README.md
+   - app.py
+   - boston_housing_prediction.joblib
+   - housing.csv
+   - make_predict_azure_app.sh
+   - make_prediction.sh
+   - requirements.txt
+   - run_docker.sh
+   - run_kubernetes.sh
+   - upload_docker.sh
 
-3. Create ssh keys and add it to the GitHub repo
-   ssh-keygen -t rsa
-   cat /home/sambuddha/.ssh/id_rsa.pub
-   <copy Key>
+3. Create ssh keys and add it to the GitHub repo:
+   - ssh-keygen -t rsa
+   - cat /home/sambuddha/.ssh/id_rsa.pub
+   - <copy Key>
    
-   Goto Github->Settings->SSH and GPG Keys->New SSH Key-><Title> and <Key>-> Add SSH Key
+   - Goto Github->Settings->SSH and GPG Keys->New SSH Key-><Title> and <Key>-> Add SSH Key
  
-4. Clone the Github repo in Cloud Shell
-   git clone git@github.com:sambuddha6/flask-sklearn.git
+4. Clone the Github repo in Cloud Shell:
+   - git clone git@github.com:sambuddha6/flask-sklearn.git
   
-5. Create Virtual Env and activate and move to the project folder
-   python3 -m venv ~/.flask-sklearn
-   source ~/.flask-sklearn/bin/activate
-   cd flask-sklearn
+5. Create Virtual Env and activate and move to the project folder:
+   - python3 -m venv ~/.flask-sklearn
+   - source ~/.flask-sklearn/bin/activate
+   - cd flask-sklearn
 
-6. Create a miniconda env for Java 3.6.5
-   python -V
-   wget https://repo.continuum.io/miniconda/Miniconda3-4.5.4-Linux-x86_64.sh
-   sh Miniconda3-4.5.4-Linux-x86_64.sh -u
-   export PATH=~/miniconda3/bin:$PATH
-   python -V
+6. Create a miniconda env for Java 3.6.5:
+   - python -V
+   - wget https://repo.continuum.io/miniconda/Miniconda3-4.5.4-Linux-x86_64.sh
+   - sh Miniconda3-4.5.4-Linux-x86_64.sh -u
+   - export PATH=~/miniconda3/bin:$PATH
+   - python -V
   
-7. Update the requirements.txt
-   Flask==2.0.3
-	 pandas==1.1.5
-	 scikit-learn==0.20.4
-	 joblib
-	 pylint
-	 pytest
-	 jsonschema
+7. Update the requirements.txt:
+   - Flask==2.0.3
+   - pandas==1.1.5
+   - scikit-learn==0.20.4
+   - joblib
+   - pylint
+   - pytest
+   - jsonschema
   
 8. Make the following changes in Makefile
     a) add under test:
 	test:
-		python -m pytest -vv test_app.py
+	- python -m pytest -vv test_app.py
     b) update under lint:
 	lint:
-		pylint --disable=R,C,W1203,W0702 app.py
+	- pylint --disable=R,C,W1203,W0702 app.py
   
 9. Add the following changes in app.py
 	a) update line #17
 	   from
-	   scaler = StandardScaler().fit(payload) 
+	   - scaler = StandardScaler().fit(payload) 
 	   to 
-	   scaler = StandardScaler(with_mean=False).fit(payload)
+	   - scaler = StandardScaler(with_mean=False).fit(payload)
 	b) add after line #58
-	   clf = clf[0][0]
+	   - clf = clf[0][0]
   
 10. Add the following changes in make_predict_azure_app.sh
    update line #28
@@ -142,65 +142,63 @@ def test_predict():
             return True
         return False   
   
-12. Run the Makefile
-	make all
+12. Run the Makefile:
+	- make all
   
-13. Start the service
-	az webapp up -n flask-ml-service01
+13. Start the service:
+	- az webapp up -n flask-ml-service01
 	
-	Post-Deployment check https://flask-ml-service01.azurewebsites.net/
+	- Post-Deployment check https://flask-ml-service01.azurewebsites.net/
   
-14. Run prediction
-    chmod 744 make_predict_azure_app.sh
-	./make_predict_azure_app.sh
+14. Run prediction:
+    - chmod 744 make_predict_azure_app.sh
+    - ./make_predict_azure_app.sh
   
-15. Stream the logs
-	az webapp log tail
+15. Stream the logs:
+    - az webapp log tail
   
-16. Commit all changes
-	git status
-	git add Makefile
-	git add requirements.txt
-	git add app.py
-	git add test_app.py
+16. Commit all changes:
+	- git status
+	- git add Makefile
+	- git add requirements.txt
+	- git add app.py
+	- git add test_app.py
 
-	git commit -m "Changes made for successful run"
+	- git commit -m "Changes made for successful run"
   
-  #Execute next 3 lines if Github throws error for email id and name
-	git config --global user.email "sambuddha6@gmail.com"
-	git config --global user.name "Sambuddha"
-  git commit -m "Changes made for successful run"
+  Execute next 3 lines if Github throws error for email id and name
+	 - git config --global user.email "sambuddha6@gmail.com"
+	 - git config --global user.name "Sambuddha"
+         - git commit -m "Changes made for successful run"
 	
-  git push
+         - git push
   
-17. Goto dev.azure.com 
-    Creare new Organization and new Project if not there
-    Create new Pipeline
-    Where is your code -> GitHub
-	  Select a Repository -> sambuddha6->flaskml-test (Repository access-> Only select repositories -> Approve and Install)
-	  Configure your pipeline -> Python to Linux Web App on Azure
-	  Select an Azure subscription
-	  Authorize
-	  Web App Name -> flask-ml-service01
-	  Validate and Configure
-	  Review your pipeline YAML
-	  Save and Run
-	  Commit Message
-	  Commit directly to the main branch
-	  Save and Run
-	  BuildStage
-		 -> BuildJob
-	  Deploy Web App
-		 -> DeploymentJob
+17. - Goto dev.azure.com 
+    - Creare new Organization and new Project if not there
+    - Create new Pipeline
+    - Where is your code -> GitHub
+    - Select a Repository -> sambuddha6->flaskml-test (Repository access-> Only select repositories -> Approve and Install)
+    - Configure your pipeline -> Python to Linux Web App on Azure
+    - Select an Azure subscription
+    - Authorize
+    - Web App Name -> flask-ml-service01
+    - Validate and Configure
+    - Review your pipeline YAML
+    - Save and Run
+    - Commit Message
+    - Commit directly to the main branch
+    - Save and Run
+    - BuildStage -> BuildJob
+    - Deploy Web App -> DeploymentJob
   
 18. Check azure-pipelines.yml in GitHub repo
   
 19. Edit app.py 
-		a) update line #23
+    a) update line #23
 	     from 
-		   html = "<h3>Sklearn Prediction Home</h3>"
+		   - html = "<h3>Sklearn Prediction Home</h3>"
 	     to
-		   html = "<h3>Sklearn Prediction Home - Machine Learning</h3>"
+		   - html = "<h3>Sklearn Prediction Home - Machine Learning</h3>"
 	     and monitor the trigger in deployment
 	
 	   Post-Deployment check https://flask-ml-service01.azurewebsites.net/
