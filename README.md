@@ -205,7 +205,7 @@ The CI/CD Pipeline project is to demonstrate setting up Azure Pipelines to deplo
 
 The project can be improved in the future by making it up-to-date with the latest python, scikit-learn and pandas version (can be run end-to-end without having to adjust with specific older versions of all required libraries)
 
-## Demo 
+## Demo :
 
-<TODO: Add link Screencast on YouTube>
+- https://youtu.be/xsB2KnX3pyA
 
