@@ -2,7 +2,7 @@
 
 # Overview
 
-The CI/CD Pipeline project is to demonstrate setting up Azure Pipelines to deploy the Flask starter code to Azure App Services  
+The CI/CD Pipeline project is to demonstrate setting up Azure Pipelines to deploy a Flask starter code to Azure App Services  
 
 ## Project Plan
 
