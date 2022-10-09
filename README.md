@@ -15,7 +15,7 @@ The CI/CD Pipeline project is to demonstrate setting up Azure Pipelines and Gith
  
 * Architectural Diagram (Shows how key parts of the system work):
 
-![Architecture Digram](./docs/source/_static/img/Architecture.JPG)
+![Architecture Digram](./docs/source/_static/img/Architecture_updated.JPG)
 
 ## Instructions for running the Python project - 
 
