@@ -199,7 +199,7 @@ The CI/CD Pipeline project is to demonstrate setting up Azure Pipelines and Gith
   ![Github_Actions](./docs/source/_static/img/Github_Actions_success.JPG)
 	
 * Locust run:
-  ![Locust](./docs/source/_static/img/Locust.JPG)
+  ![Locust](./docs/source/_static/img/Locust_updated.JPG)
 
 ## Enhancements
 
