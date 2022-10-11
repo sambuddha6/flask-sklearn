@@ -203,7 +203,12 @@ The CI/CD Pipeline project is to demonstrate setting up Azure Pipelines and Gith
 
 ## Enhancements
 
-The project can be improved in the future by making it up-to-date with the latest python, scikit-learn and pandas version (can be run end-to-end without having to adjust with specific older versions of all required libraries)
+The project can be improved in the future 
+1) by making it up-to-date with the latest python, scikit-learn and pandas version (can be run end-to-end without having to adjust with specific older versions of all required libraries)
+2) by deploying to a kubernetes cluster
+3) by including integration tests as part of pipeline
+4) by building an image of the app and push to an image registry(e.g acr) and then do a containerized deployment
+5) by enhancing the web page to add more dynamic content and making prediction a part of the content
 
 ## Demo :
 
