@@ -214,3 +214,11 @@ The project can be improved in the future
 
 - https://www.youtube.com/watch?v=tMcAp0MbzkU
 
+Indvidual videos step-wise
+
+- https://youtu.be/-wTJ74fZ6Kw (bringing Web service up)
+- https://youtu.be/zoOa1VrxfhA (prediction and logs)
+- https://youtu.be/ch0sjuaY1d0 (pipeline deployment)
+- https://youtu.be/GwG8hvevsic (pipeline prediction and re-deploy)
+- https://youtu.be/GL11iez-1SY (github actions deployment)
+- https://youtu.be/yG2TDnqvsxM (github actions deployment prediction)
